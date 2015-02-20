@@ -19,10 +19,10 @@ RUN mkdir -p /home/steam/csgo && \
 
 RUN cd /home/steam && \
     ./steamcmd.sh \
-    +login anonymous \
-    +force_install_dir ./csgo \
-    +app_update 740 validate \
-    +quit
+      +login anonymous \
+      +force_install_dir ./csgo \
+      +app_update 740 validate \
+      +quit
 
 # Make server port available to host
 EXPOSE 27015
@@ -31,5 +31,5 @@ EXPOSE 27015
 ADD ./run.sh /home/steam/run.sh
 RUN chmod +x /home/steam/run.sh
 
-WORKDIR /home/steam/csgo
+WORKDIR /home/steam
 ENTRYPOINT ["/home/steam/run/run.sh"]
