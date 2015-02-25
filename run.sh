@@ -4,4 +4,8 @@ if [ -z $CSGO_MAP ]
 	CSGO_MAP="de_dust2"
 fi
 
-/home/steam/srcds_run -game csgo -console -usercon +game_type 0 +game_mode 0 +mapgroup mg_active +map $CSGO_MAP
+if [ -z $CSGO_MAXPLAYERS ]
+	CSGO_MAXPLAYERS=12
+fi
+
+/home/steam/csgosrcds_run -game csgo +map $CSGO_MAP +maxplayers $CSGO_MAXPLAYERS -autoupdate
