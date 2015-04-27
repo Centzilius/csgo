@@ -31,5 +31,8 @@ EXPOSE 27015
 ADD ./run.sh /home/steam/run.sh
 RUN chmod +x /home/steam/run.sh
 
+VOLUME ["/home/steam/csgo/csgo/cfg"]
+VOLUME ["/home/steam/csgo/csgo/maps"]
+
 WORKDIR /home/steam
 ENTRYPOINT ["/home/steam/run/run.sh"]
